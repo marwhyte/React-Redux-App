@@ -1,21 +1,21 @@
-import { FETCH_DATA, UPDATE_KANYE, SET_ERROR } from "../actions";
+import { FETCH_QUOTE, UPDATE_QUOTE, SET_ERROR, RESET_QUOTE } from "../actions";
 
 const initialState = {
-  quote:
-    "I'll say things that are serious and put them in a joke form so people can enjoy them. We laugh to keep from crying.",
+  quote: "",
   isFetchingData: false,
   error: ""
 };
 
 export const kanyeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_DATA:
+    case FETCH_QUOTE:
       return {
         ...state,
         isFetchingData: true,
         quote: ""
       };
-    case UPDATE_KANYE:
+    case UPDATE_QUOTE:
+      console.log(action.payload);
       return {
         ...state,
         quote: action.payload,
@@ -26,6 +26,11 @@ export const kanyeReducer = (state = initialState, action) => {
         ...state,
         isFetchingData: false,
         error: action.payload
+      };
+    case RESET_QUOTE:
+      return {
+        ...state,
+        quote: ""
       };
     default:
       return state;

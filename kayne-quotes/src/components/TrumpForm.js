@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getKanyeData } from "../actions";
+import { getTrumpData } from "../actions";
 
-const KanyeForm = props => {
+const TrumpForm = props => {
   const handleGetData = e => {
     e.preventDefault();
-    props.getKanyeData();
+    props.getTrumpData();
   };
 
   return (
@@ -14,7 +14,7 @@ const KanyeForm = props => {
         console.log("fetching data")
       ) : (
         <button className="button" onClick={handleGetData}>
-          Get Your new Kanye Quote
+          Get Your new Trump Tweet
         </button>
       )}
     </div>
@@ -26,4 +26,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getKanyeData })(KanyeForm);
+export default connect(mapStateToProps, { getTrumpData })(TrumpForm);
