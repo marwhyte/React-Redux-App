@@ -172,10 +172,20 @@ body {
   background-color: black;
   border-radius: 15px;
   border: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .navButton:hover {
   background-color: white;
   color: black;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .link {
   text-decoration: none;
@@ -185,4 +195,9 @@ body {
 .link:hover {
   background-color: white;
   color: black;
+}
+@media only screen and (max-width: 768px) {
+  .quote {
+    width: 90%;
+  }
 }
